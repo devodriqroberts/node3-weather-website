@@ -13,11 +13,13 @@ const forecast = ({lat, lon, location}, callback) => {
             const description = res.body.current.weather_descriptions[0]
             const current = res.body.current.temperature
             const feelslike = res.body.current.feelslike
+            const humidity = res.body.current.humidity
             callback(undefined, {
                 location: location,
                 description: description,
                 current: current,
                 feelslike: feelslike,
+                humidity: humidity,
             })
         }
     })

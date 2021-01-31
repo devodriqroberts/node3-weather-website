@@ -22,7 +22,7 @@ weatherForm.addEventListener("submit", (e) => {
             } else if (data.forecastError) {
                 message1.textContent = data.forecastError
             } else {
-                const forecast = `Conditions are ${data.forecast.description}. It is currently ${data.forecast.current} degrees, but feels like ${data.forecast.feelslike}.`
+                const forecast = `Conditions are ${data.forecast.description} with humidity of ${data.forecast.humidity}%. It is currently ${data.forecast.current} degrees, but feels like ${data.forecast.feelslike}.`
                 message1.textContent = data.forecast.location
                 message2.textContent = forecast
             }
