@@ -55,7 +55,7 @@ app.get("/weather", (req, res) => {
             error: "You must provide an address."
         })
     }
-    
+
     geocode(req.query.address, (geocodeError, geoRes) => {
         if (geocodeError) {
             return res.send({ geocodeError })
@@ -74,13 +74,18 @@ app.get("/weather", (req, res) => {
 app.get("/products", (req, res) => {
     if (!req.query.search) {
         return res.send({
-                error: "You must provide a search term."
-            })
+            error: "You must provide a search term."
+        })
     }
     console.log(req.query.search)
     res.send({
         products: []
     })
+})
+
+app.post("/celigo", (req, res) => {
+    const body = req.body
+    res.status(201).json(body)
 })
 
 app.get("/help/*", (req, res) => {
