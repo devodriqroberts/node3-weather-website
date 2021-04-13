@@ -85,7 +85,7 @@ app.get("/products", (req, res) => {
 
 app.post("/celigo", (req, res) => {
     const body = req.body
-    res.status(201).send("Got Request")
+    res.status(201).send(body)
 })
 
 app.get("/help/*", (req, res) => {
