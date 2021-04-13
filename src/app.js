@@ -85,7 +85,7 @@ app.get("/products", (req, res) => {
 
 app.post("/celigo", (req, res) => {
     const body = req.body
-    res.status(201).json({ "Test": "Data", "ID": "adadae783edqf89", "Name": "My Test Account" })
+    res.status(201).json({ body })
 })
 
 app.get("/help/*", (req, res) => {
