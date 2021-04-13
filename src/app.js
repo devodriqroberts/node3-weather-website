@@ -8,6 +8,7 @@ const forecast = require("./utils/forecast")
 // Create the app with the express call.
 const app = express()
 const port = process.env.PORT || 3000
+app.use(express.json())
 
 // Define paths for Express config.
 const publicDirPath = path.join(__dirname, '../public')
@@ -85,6 +86,7 @@ app.get("/products", (req, res) => {
 
 app.post("/celigo", (req, res) => {
     const body = req.body
+    // console.log({ body })
     res.status(201).json({ body })
 })
 
