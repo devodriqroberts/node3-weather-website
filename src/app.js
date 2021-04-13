@@ -87,7 +87,14 @@ app.get("/products", (req, res) => {
 app.post("/celigo", (req, res) => {
     const body = req.body
     // console.log({ body })
-    res.status(201).json({ body })
+    res.status(201).json({
+        "Id_t": body.Id,
+        "Name_t": body.Name,
+        "LQ_Customer_ID__c_t": body.LQ_Customer_ID__c,
+        "Won_Opportunities__c_t": body.LQ_Customer_ID__c,
+        "Closed_Opportunities__c_t": body.Closed_Opportunities__c,
+        "Status__c_t": body.Status__c
+    })
 })
 
 app.get("/help/*", (req, res) => {
